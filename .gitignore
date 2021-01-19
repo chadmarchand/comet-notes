@@ -1,0 +1,5 @@
+# NPM dependencies
+*/node_modules/
+
+# AWS
+serverless-output.yaml
