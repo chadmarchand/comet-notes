@@ -1,4 +1,4 @@
-# comet-notes
+# Comet Notes
 A personal wiki application.
 
-[Comet Notes Lambda Function](lambda/README.md)
+[Lambda Function](lambda/README.md)

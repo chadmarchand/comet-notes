@@ -1,4 +1,4 @@
-# comet-notes lambda function
+# Comet Notes Lambda Function
 
 AWS lambda function to handle GraphQL queries.
 
