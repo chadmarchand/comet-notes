@@ -1,6 +1,7 @@
 # Comet Notes Lambda Function
 
 AWS lambda function to handle GraphQL queries.
+Connects to a PostgreSQL Amazon RDS database to return results.
 
 ## Packaging
 
@@ -12,6 +13,7 @@ with references to the uploaded artifacts in S3.
 
 ## Deployment
 
-Deploys the Lambda Function and API Gateway to the `prod` stack.
+Deploys the Lambda Function and API Gateway to the `prod` stack, and uses the given parameters to
+connect to an RDS database.
 
-`npm run deploy`
+`npm run deploy -- --parameter-overrides RDSUsername=<username> RDSHost=<host> RDSPassword=<password> RDSDBName=<DBName>`
