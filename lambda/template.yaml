@@ -1,5 +1,19 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
+Parameters:
+  RDSUserName:
+    Type: String
+    Default: None
+  RDSPassword:
+    Type: String
+    Default: None
+    NoEcho: true
+  RDSDBName:
+    Type: String
+    Default: None
+  RDSHost:
+    Type: String
+    Default: None
 Resources:
   GraphQL:
     Type: AWS::Serverless::Function
@@ -12,3 +26,10 @@ Resources:
           Properties:
             Path: /graphql
             Method: ANY
+      Environment:
+        Variables:
+          PGUSER: !Ref RDSUserName
+          PGHOST: !Ref RDSHost
+          PGPASSWORD: !Ref RDSPassword
+          PGDATABASE: !Ref RDSDBName
+          PGPORT: 5432
