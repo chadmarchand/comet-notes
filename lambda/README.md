@@ -17,3 +17,17 @@ Deploys the Lambda Function and API Gateway to the `prod` stack, and uses the gi
 connect to an RDS database.
 
 `npm run deploy -- --parameter-overrides RDSUsername=<username> RDSHost=<host> RDSPassword=<password> RDSDBName=<DBName>`
+
+## Database Migration
+
+### Create a new migration script
+
+`npm run migrate create <migration name>`
+
+### Run "up" migrations
+
+`DATABASE_URL=<connection string> npm run migrate up`
+
+### Run "down" migrations
+
+`DATABASE_URL=<connection string> npm run migrate down`
