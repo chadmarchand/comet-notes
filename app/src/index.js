@@ -19,7 +19,8 @@ function seedMockInitialState() {
     push(
       {
         title : 'Test123',
-        id : uuidv4()
+        id : uuidv4(),
+        content : 'Here is some content'
       }
     )
   );

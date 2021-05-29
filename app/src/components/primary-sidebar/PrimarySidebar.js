@@ -1,12 +1,14 @@
 import React from 'react';
 import './PrimarySidebar.css';
 import { useSelector } from 'react-redux'
+import { store, select } from '../../store';
 
 const selectNotes = state => state.notes;
 
 function PrimarySidebar() {
   function selectNote(noteId) {
     console.log('Selecting note with ID', noteId);
+    store.dispatch(select(noteId));
   }
 
   const notes = useSelector(selectNotes);

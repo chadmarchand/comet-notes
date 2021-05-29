@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux'
 
-class EditorPanel extends Component {
-  render() {
-    return (
-      <div>
-        This is the editor panel.
-      </div>
-    );
-  }
+const selectNoteById = state => state.notes.find(note => note.id === state.selectedNoteId);
+
+function EditorPanel() {  
+  const selectedNote = useSelector(selectNoteById);
+
+  let selectedNoteId = selectedNote ? selectedNote.id : 'Nothing selected';
+
+  return (
+    <div>
+      This is the editor panel.
+
+
+      {selectedNoteId}
+    </div>
+  );
 }
 
 export default EditorPanel;
