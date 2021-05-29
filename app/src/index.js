@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app/App';
-import reportWebVitals from './reportWebVitals';
 import { store, push } from './store';
+import { v4 as uuidv4 } from 'uuid';
 
 seedMockInitialState();
 
@@ -14,11 +14,13 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
-
 function seedMockInitialState() {
-  store.dispatch(push({ title : 'Test123' }));
+  store.dispatch(
+    push(
+      {
+        title : 'Test123',
+        id : uuidv4()
+      }
+    )
+  );
 }

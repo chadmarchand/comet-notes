@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PrimarySidebar.css';
 import { useSelector } from 'react-redux'
 
 const selectNotes = state => state.notes;
 
 function PrimarySidebar() {
-  const notes = useSelector(selectNotes);
+  function selectNote(noteId) {
+    console.log('Selecting note with ID', noteId);
+  }
 
-  console.log('Notes', notes);
+  const notes = useSelector(selectNotes);
 
   return (
     <div className="primary-sidebar">
@@ -15,9 +17,14 @@ function PrimarySidebar() {
 
       <ul>
         {notes.map(note =>
-          (<li key={note.title}>
-            {note.title}
-          </li>)
+          (
+            <li
+              key={note.id}
+              onClick={() => selectNote(note.id)}
+            >
+              {note.title} {note.id}
+            </li>
+          )
         )}
       </ul>
     </div>
