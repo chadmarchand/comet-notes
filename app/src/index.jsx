@@ -5,15 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import App from './components/app/App';
 import { store, push } from './store';
 
-seedMockInitialState();
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
-
 function seedMockInitialState() {
   store.dispatch(
     push(
@@ -25,3 +16,12 @@ function seedMockInitialState() {
     ),
   );
 }
+
+seedMockInitialState();
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root'),
+);

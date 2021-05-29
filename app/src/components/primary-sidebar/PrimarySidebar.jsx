@@ -19,13 +19,17 @@ function PrimarySidebar() {
 
       <ul>
         {notes.map((note) => (
-          <li
-            key={note.id}
-            onClick={() => selectNote(note.id)}
-          >
-            {note.title}
-            {' '}
-            {note.id}
+          <li>
+            <button
+              type="button"
+              key={note.id}
+              onClick={() => selectNote(note.id)}
+              onKeyDown={() => selectNote(note.id)}
+            >
+              {note.title}
+              {' '}
+              {note.id}
+            </button>
           </li>
         ))}
       </ul>
