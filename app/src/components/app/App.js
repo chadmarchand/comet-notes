@@ -1,8 +1,8 @@
 import './App.css';
+import { Provider } from 'react-redux';
 import PrimarySidebar from '../primary-sidebar/PrimarySidebar';
 import EditorPanel from '../editor-panel/EditorPanel';
 import { store } from '../../store';
-import { Provider } from 'react-redux';
 
 function App() {
   return (

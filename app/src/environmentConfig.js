@@ -1,3 +1,3 @@
 export default {
-  invokeUrl: '<lambda url here>'
+  invokeUrl: '<lambda url here>',
 };

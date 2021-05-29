@@ -1,9 +1,9 @@
 import React from 'react';
 import './PrimarySidebar.css';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import { store, select } from '../../store';
 
-const selectNotes = state => state.notes;
+const selectNotes = (state) => state.notes;
 
 function PrimarySidebar() {
   function selectNote(noteId) {
@@ -18,16 +18,16 @@ function PrimarySidebar() {
       This is the primary sidebar.
 
       <ul>
-        {notes.map(note =>
-          (
-            <li
-              key={note.id}
-              onClick={() => selectNote(note.id)}
-            >
-              {note.title} {note.id}
-            </li>
-          )
-        )}
+        {notes.map((note) => (
+          <li
+            key={note.id}
+            onClick={() => selectNote(note.id)}
+          >
+            {note.title}
+            {' '}
+            {note.id}
+          </li>
+        ))}
       </ul>
     </div>
   );
