@@ -10,9 +10,7 @@ function EditorPanel() {
 
   return (
     <div>
-      This is the editor panel.
-
-      {selectedNoteId}
+      { selectedNoteId }
     </div>
   );
 }

@@ -15,6 +15,15 @@ function seedMockInitialState() {
       },
     ),
   );
+  store.dispatch(
+    push(
+      {
+        title: 'OtherTest',
+        id: uuidv4(),
+        content: 'Here is some additional content',
+      },
+    ),
+  );
 }
 
 seedMockInitialState();
